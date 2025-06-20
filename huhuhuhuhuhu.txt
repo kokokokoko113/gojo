@@ -1,0 +1,448 @@
+-- by tuanabhiosdz nhé các cháu tập skid :))
+-- https://discord.gg/kK1vMrUsQy
+
+-- 🔑 Key cố định
+local key = "theanhhub201420142014"
+
+-- Giao diện nhập key
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "KeyAccessGui"
+gui.ResetOnSpawn = false
+gui.Parent = game.CoreGui
+
+-- 🧾 Menu nhỏ giới thiệu link lấy key
+local menuLabel = Instance.new("TextLabel")
+menuLabel.Size = UDim2.new(0, 300, 0, 30)
+menuLabel.Position = UDim2.new(0.5, -150, 0.5, -65)
+menuLabel.BackgroundTransparency = 1
+menuLabel.Text = "🌐 Lấy key tại web bên dưới:"
+menuLabel.TextColor3 = Color3.fromRGB(255, 255, 0)
+menuLabel.Font = Enum.Font.GothamBold
+menuLabel.TextScaled = true
+menuLabel.Parent = gui
+
+-- 🔗 Nút sao chép link web lấy key
+local linkButton = Instance.new("TextButton")
+linkButton.Size = UDim2.new(0, 300, 0, 35)
+linkButton.Position = UDim2.new(0.5, -150, 0.5, -25)
+linkButton.BackgroundColor3 = Color3.fromRGB(0, 120, 255)
+linkButton.Text = "📋 Mở trang lấy key"
+linkButton.TextColor3 = Color3.new(1, 1, 1)
+linkButton.Font = Enum.Font.GothamBold
+linkButton.TextScaled = true
+linkButton.Parent = gui
+Instance.new("UICorner", linkButton).CornerRadius = UDim.new(0, 8)
+
+local webLink = "https://x.subtounlock.com/p/sub-to-unlock-1.html"
+linkButton.MouseButton1Click:Connect(function()
+    setclipboard(webLink)
+    linkButton.Text = "✅ Đã sao chép link!"
+    wait(2)
+    linkButton.Text = "📋 Mở trang lấy key"
+end)
+
+-- 🔤 Ô nhập key
+local box = Instance.new("TextBox")
+box.Size = UDim2.new(0, 300, 0, 50)
+box.Position = UDim2.new(0.5, -150, 0.5, 25)
+box.PlaceholderText = "Nhập key để truy cập"
+box.Text = ""
+box.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+box.TextColor3 = Color3.fromRGB(155, 155, 155)
+box.ClearTextOnFocus = false
+box.Font = Enum.Font.SourceSansBold
+box.TextScaled = true
+box.Parent = gui
+
+-- Kiểm tra key
+box.FocusLost:Connect(function()
+    if string.lower(box.Text) == key then
+        gui:Destroy()
+
+        -- ✅ GIAO DIỆN CHÍNH (bạn giữ nguyên phần Fluent ở dưới đây như cũ)
+        local ScreenGui = Instance.new("ScreenGui")
+        local ImageButton = Instance.new("ImageButton")
+        local UICorner = Instance.new("UICorner")
+
+        ScreenGui.Parent = game.CoreGui
+        ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+        ImageButton.Parent = ScreenGui
+        ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+        ImageButton.BorderSizePixel = 0
+        ImageButton.Position = UDim2.new(0.10615778, 0, 0.16117947, 0)
+        ImageButton.Size = UDim2.new(0, 40, 0, 40)
+        ImageButton.Draggable = true
+        ImageButton.Image = "http://www.roblox.com/asset/?id=95585980268172"
+
+        UICorner.CornerRadius = UDim.new(1, 10)
+        UICorner.Parent = ImageButton
+
+        ImageButton.MouseButton1Down:Connect(function()
+            game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game)
+        end)
+
+        local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+        repeat wait() until game:IsLoaded()
+        local Window = Fluent:CreateWindow({
+            Title = "ThếAnhhub",
+            SubTitle = "script tổng hợp",
+            TabWidth = 157,
+            Size = UDim2.fromOffset(500, 300),
+            Acrylic = true,
+            Theme = "Dark",
+            MinimizeKey = Enum.KeyCode.End
+        })
+
+        -- 👇 Tabs bạn thêm tiếp như trước đây
+ local Tabs = {
+            Main0 = Window:AddTab({ Title = "Thông tin" }),
+            Main1 = Window:AddTab({ Title = "script fam" }),
+            Main2 = Window:AddTab({ Title = "script tổng hợp" }),
+        }
+
+        Tabs.Main0:AddButton({
+            Title = "Discord Thế Anh",
+            Description = "discord.gg/dUXxxgdQ",
+            Callback = function()
+                setclipboard("https://discord.gg/dUXxxgdQ")
+            end
+        })
+
+        Tabs.Main0:AddButton({
+            Title = "TikTok Thế Anh",
+            Description = "tiktok.com/@ththunhong5",
+            Callback = function()
+                setclipboard("https://www.tiktok.com/@ththunhong5?_t=ZS-8wVlCAMZ1hH&_r=1")
+end
+            })
+            Tabs.Main2:AddButton({
+    Title=" Tuấn Anh IOS",
+    Description="",
+    Callback=function()
+	 loadstring(game:HttpGet("https://raw.githubusercontent.com/AnhDzaiScript/TuanAnhIOSNew/refs/heads/main/TuanAnhIOS-TongHop.Lua"))()
+	end
+  })
+  Tabs.Main2:AddButton({
+    Title="Huy Sad chính thức",
+    Description="",
+    Callback=function()
+    Loadstring(game:HttpGet("https://raw.githubusercontent.com/HuySadd/Huy-Sad-Ch-nh-Th-c/refs/heads/main/HuysadChinhThuc.lua"))()
+    end
+   })
+   Tabs.Main2:AddButton({
+    Title="sói v3",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Soirobloxgm/Soirobloxv3/refs/heads/main/AllscriptTonghop.lua"))()
+    end
+   })
+   Tabs.Main2:AddButton({
+    Title="Tboy khác",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TBoyRoblox717/TBoyRobloxYTB/refs/heads/main/AllScriptBF.txt"))()
+    end
+  })
+  Tabs.Main2:AddButton({
+    Title="SoirobloxV1",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Soirobloxgm/SoirobloxV1/refs/heads/main/AllscriptTonghop.txt"))()
+    end
+  })
+  Tabs.Main2:AddButton({
+    Title="StarlightHub",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/YumCoding-Alt/StarlightHub/refs/heads/main/SkidConCacBaMay.txt"))()
+    end
+  })
+  Tabs.Main2:AddButton({
+    Title="RUBU1k",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet"https://raw.githubusercontent.com/Bubu1k/Rubutv/refs/heads/main/Rubutonghop.txt")()
+    end
+  })
+  Tabs.Main2:AddButton({
+    Title="vinh11 ",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/vinh11eqweaws/zzz/refs/heads/main/cc"))()
+    end
+  })
+  
+Tabs.Main2:AddButton({
+    Title="zing mod",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/vinh11eqweaws/zingmod/refs/heads/main/zingmod"))()
+end
+  })
+Tabs.Main2:AddButton({
+    Title="Tboy",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TBoyRoblox717/tboyroblox/refs/heads/main/AllScriptFix.lua"))()
+end
+  })
+Tabs.Main2:AddButton({
+    Title="gia huy",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/giahuy-roy/GiaHuy.tonghop/refs/heads/main/GiaHuy.Add"))()
+end
+  })
+Tabs.Main2:AddButton({
+    Title="ko biết",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TheCrusedOne/WumpsCrusedOne/refs/heads/main/TheWumpsRoblox.txt"))()
+end
+  })
+Tabs.Main2:AddButton({
+    Title="ko biết",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://isnahamzahpastebin.tech/loader/isna_scripthub_30"))()
+  end
+        })
+Tabs.Main1:AddButton({
+    Title="doggoman230",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/doggoman230/growagarden/refs/heads/main/script"))()
+    end 
+    })
+    Tabs.Main1:AddButton({
+    Title="MainHub",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://nicuse.xyz/MainHub.lua"))()
+  end
+  })
+  Tabs.Main1:AddButton({
+    Title="Koronis",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/nf-36/Koronis/refs/heads/main/Scripts/Loader.lua"))()
+  end
+  })
+  Tabs.Main1:AddButton({
+    Title="BrySadW",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/BrySadW/GrowAGarden/refs/heads/main/GrowAGarden.lua"))()
+  end
+  })
+  Tabs.Main1:AddButton({
+    Title="getsomber",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://getsomber.com/loader.lua"))()
+  end
+  })
+  Tabs.Main1:AddButton({
+    Title="luarmor",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/8f14c1806369f8ae3db39eafc954d76d.lua"))()
+  end
+  })
+  Tabs.Main1:AddButton({
+    Title="xQuartyx",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xQuartyx/QuartyzScript/main/Loader.lua"))()
+  end
+  })
+  Tabs.Main1:AddButton({
+    Title="FemWareDevelper",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/FemWareDevelper/Universal/refs/heads/main/Garden"))()
+  end
+  })
+  Tabs.Main1:AddButton({
+    Title="Lmy77",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://gitlab.com/Lmy77/menu/-/raw/main/infinityx"))()
+  end
+  })
+  Tabs.Main1:AddButton({
+    Title="lunor.dev",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet('https://lunor.dev/loader'))()
+  end
+  })
+  Tabs.Main1:AddButton({
+    Title="ameicaa1",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ameicaa1/Grow-a-Garden/main/Grow_A_Garden.lua"))()
+  end
+  })
+  Tabs.Main1:AddButton({
+    Title="ago106",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/ago106/SpaceHub/refs/heads/main/Multi'))()
+  end
+  })
+  
+ Tabs.Main1:AddButton({
+    Title="Roslina",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/hakariqScripts/Roslina/refs/heads/main/Ro"))()
+    end
+ })
+ Tabs.Main1:AddButton({
+    Title="autofarm",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/depthso/Grow-a-Garden/refs/heads/main/autofarm.lua')))()
+    end
+ })
+ Tabs.Main1:AddButton({
+    Title="gumanba",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/GrowaGarden", true))()
+    end
+ })
+ Tabs.Main1:AddButton({
+    Title="H4xScripts",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/H4xScripts/Loader/refs/heads/main/loader2.lua"))()
+    end
+ })
+ 
+ 
+ Tabs.Main1:AddButton({
+    Title="Skzuppy",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Skzuppy/forge-hub/main/loader.lua"))()
+    end
+ })
+ Tabs.Main1:AddButton({
+    Title="kosowa",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/kosowa/asd/refs/heads/main/GaG.lua"))()
+
+    end
+ })
+ Tabs.Main1:AddButton({
+    Title="Speed-Hub-X",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+
+    end
+ })
+ Tabs.Main1:AddButton({
+    Title="Dingarik",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Dingarik/Dingarik/refs/heads/main/GrowAGarden"))()
+    end
+ })
+ Tabs.Main1:AddButton({
+    Title="BrySadW",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/BrySadW/GrowAGarden/refs/heads/main/GrowAGarden.lua"))()
+    end
+ })
+ Tabs.Main1:AddButton({
+    Title="SpaceHub",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/ago106/SpaceHub/refs/heads/main/Multi'))()
+    end
+ })
+ Tabs.Main1:AddButton({
+    Title="PhotonScript",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/NittarPP/PhotonScript/refs/heads/main/Loading/Loading.lua"))()
+    end
+ })
+ Tabs.Main1:AddButton({
+    Title="doggoman230",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/doggoman230/growagarden/refs/heads/main/script"))()
+    end
+ })
+ 
+ Tabs.Main1:AddButton({
+    Title="checkurasshole",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/checkurasshole/Script/refs/heads/main/IQ'))();
+    end
+ })
+ 
+ Tabs.Main1:AddButton({
+    Title="Roslina",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/hakariqScripts/Roslina/refs/heads/main/Ro"))()
+    end
+ })
+ Tabs.Main1:AddButton({
+    Title="ko biết",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a8f02a61fc38bf9256dd0f17be6b16d7.lua"))()
+    end
+ })
+ Tabs.Main1:AddButton({
+    Title="BeeconHub",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/BaconBossScript/BeeconHub/main/BeeconHub"))()
+    end
+ })
+ Tabs.Main1:AddButton({
+    Title="không biết",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/main/GrowaGarden"))()
+    end
+ })
+ 
+ Tabs.Main1:AddButton({
+    Title="no lag",
+    Description="",
+    Callback=function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Grow-a-Garden-NoLag-Hub-no-key-38699"))()
+    end
+ })
+ Tabs.Main2:AddButton({
+    Title="fly",
+    Description="tao làm",
+    Callback=function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/theanh-22001144/-yh/refs/heads/main/huhu.lua"))()
+
+    end
+ })
+ 
+
+         
+    else
+        box.Text = "nguuuuuu"
+        wait(1.15)
+        box.Text = ""
+    end
+end)
